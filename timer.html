@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Timer | Mind's Motive</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .timer-display {
+            font-size: 6rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--primary-color);
+            font-family: 'Courier New', monospace;
+        }
+        
+        .break-time .timer-display {
+            color: var(--success-color);
+        }
+        
+        .timer-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .timer-controls .btn {
+            width: 120px;
+            margin: 0 5px;
+        }
+        
+        .quote-container {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @media (max-width: 768px) {
+            .timer-display {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-book-reader me-2"></i>Mind's Motive
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="timer.html">Study Timer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tasks.html">Task Manager</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex auth-buttons">
+                    <a href="login.html" class="btn btn-outline-light me-2" id="loginBtn">Login</a>
+                    <a href="signup.html" class="btn btn-light" id="signupBtn">Sign Up</a>
+                    <div class="dropdown d-none" id="userDropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="userMenuButton" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle me-1"></i><span id="username">User</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Timer Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+                <h1 class="fw-bold">Pomodoro Study Timer</h1>
+                <p class="lead text-muted">Stay focused and productive with timed study sessions</p>
+            </div>
+            
+            <div class="timer-container">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-3">
+                            <h3 class="h5" id="timerStatus">Focus Time</h3>
+                        </div>
+                        
+                        <div class="timer-display mb-4" id="timerDisplay">25:00</div>
+                        
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <label for="workTime" class="form-label">Work Time (minutes)</label>
+                                <input type="number" class="form-control" id="workTime" min="1" max="60" value="25">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="breakTime" class="form-label">Break Time (minutes)</label>
+                                <input type="number" class="form-control" id="breakTime" min="1" max="30" value="5">
+                            </div>
+                        </div>
+                        
+                        <div class="timer-controls text-center">
+                            <button id="startTimer" class="btn btn-primary">
+                                <i class="fas fa-play me-1"></i> Start
+                            </button>
+                            <button id="pauseTimer" class="btn btn-secondary" disabled>
+                                <i class="fas fa-pause me-1"></i> Pause
+                            </button>
+                            <button id="resetTimer" class="btn btn-danger">
+                                <i class="fas fa-redo me-1"></i> Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card border-0 shadow-sm mt-4">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="h5 mb-0">Session Stats</h3>
+                            <span class="badge bg-primary">Sessions: <span id="sessionCount">0</span></span>
+                        </div>
+                        
+                        <div class="progress mb-3" style="height: 10px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 0%;" id="sessionProgress"></div>
+                        </div>
+                        
+                        <div class="quote-container">
+                            <p class="text-center fst-italic mb-0" id="motivationalQuote">
+                                "The secret of getting ahead is getting started. – Mark Twain"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card border-0 shadow-sm mt-4" style="font-family: 'Times New Roman', Times, serif;">
+                    <div class="card-body p-4">
+                        <h3 class="h5 mb-3">How to Use the Pomodoro Technique :</h3>
+                        <ol class="mb-0">
+                            <li>Set your work time (default is 25 minutes)</li>
+                            <li>Work on a single task until the timer rings</li>
+                            <li>Take a short break (default is 5 minutes)</li>
+                            <li>After 4 pomodoros, take a longer break (15-30 minutes)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white"
+        style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Mind's Motive</h5>
+                    <p>Helping students stay focused, organized, and motivated to achieve their academic goals.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="features.html" class="text-white">Features</a></li>
+                        <li><a href="about.html" class="text-white">About Us</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Features</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="timer.html" class="text-white">Study Timer</a></li>
+                        <li><a href="tasks.html" class="text-white">Task Manager</a></li>
+                        <li><a href="dashboard.html" class="text-white">Dashboard</a></li>
+                        <li><a href="blog.html" class="text-white">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5>Newsletter</h5>
+                    <p>Subscribe to our newsletter for study tips and updates.</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2" placeholder="Your email">
+                        <button type="submit" class="btn btn-outline-light">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 Mind's Motive. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/gamify.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

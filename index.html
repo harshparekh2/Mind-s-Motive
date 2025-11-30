@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind's Motive | Student Productivity Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-book-reader me-2"></i>Mind's Motive
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="timer.html">Study Timer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tasks.html">Task Manager</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex auth-buttons">
+                    <a href="login.html" class="btn btn-outline-light me-2" id="loginBtn">Login</a>
+                    <a href="signup.html" class="btn btn-light" id="signupBtn">Sign Up</a>
+                    <div class="dropdown d-none" id="userDropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="userMenuButton" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle me-1"></i><span id="username">User</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>  
+
+    <!-- Hero Section -->
+    <header class="hero-section py-5 text-white min-vh-100 d-flex align-items-center" style="background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(assests/Gemini_Generated_Image_sbh01vsbh01vsbh0.png) center/cover no-repeat;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-xl-6" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+                    <h1 class="display-4 fw-bold mb-3">Boost Your Study Productivity</h1>
+                    <p class="lead mb-4">Mind's Motive helps you stay focused, manage your tasks, and achieve your academic goals with powerful productivity tools designed specifically for students.</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="signup.html" class="btn btn-primary btn-lg">Get Started</a>
+                        <a href="features.html" class="btn btn-outline-primary btn-lg">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Features to Enhance Your Study Experience</h2>
+                <p class="lead text-muted">Tools designed to help you focus, organize, and excel in your studies</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon bg-primary bg-gradient text-white mb-3">
+                                <i class="fas fa-clock fa-2x"></i>
+                            </div>
+                            <h3 class="card-title h5">Pomodoro Timer</h3>
+                            <p class="card-text">Stay focused with our customizable Pomodoro timer that helps you work in productive intervals.</p>
+                            <a href="timer.html" class="btn btn-sm btn-outline-primary">Try it now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon bg-primary bg-gradient text-white mb-3">
+                                <i class="fas fa-tasks fa-2x"></i>
+                            </div>
+                            <h3 class="card-title h5">Task Manager</h3>
+                            <p class="card-text">Organize your assignments, projects, and exams with our intuitive task management system.</p>
+                            <a href="tasks.html" class="btn btn-sm btn-outline-primary">Try it now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon bg-primary bg-gradient text-white mb-3">
+                                <i class="fas fa-chart-line fa-2x"></i>
+                            </div>
+                            <h3 class="card-title h5">Progress Tracking</h3>
+                            <p class="card-text">Monitor your study habits and productivity with detailed statistics and insights.</p>
+                            <a href="dashboard.html" class="btn btn-sm btn-outline-primary">Try it now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">What Students Say</h2>
+                <p class="lead text-muted">Hear from students who have improved their productivity</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="card-text">"Mind's Motive has completely transformed how I study. The Pomodoro timer keeps me focused, and the task manager helps me stay on top of all my assignments."</p>
+                            <div class="d-flex align-items-center">
+                                <div class="avatar me-3">
+                                    <i class="fas fa-user-circle fa-2x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Sarah Johnson</h6>
+                                    <small class="text-muted">Computer Science Student</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="card-text">"I've tried many productivity apps, but Mind's Motive is specifically designed for students like me. My grades have improved since I started using it regularly."</p>
+                            <div class="d-flex align-items-center">
+                                <div class="avatar me-3">
+                                    <i class="fas fa-user-circle fa-2x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Michael Chen</h6>
+                                    <small class="text-muted">Engineering Student</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                            </div>
+                            <p class="card-text">"The motivational quotes and progress tracking keep me going even when I'm feeling unmotivated. It's like having a personal study coach."</p>
+                            <div class="d-flex align-items-center">
+                                <div class="avatar me-3">
+                                    <i class="fas fa-user-circle fa-2x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Emily Rodriguez</h6>
+                                    <small class="text-muted">Psychology Student</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-3">Ready to Boost Your Productivity?</h2>
+            <p class="lead mb-4">Join thousands of students who have improved their study habits with Minds Motive.</p>
+            <a href="signup.html" class="btn btn-light btn-lg">Sign Up Now - It's Free!</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>Mind's Motive</h5>
+                    <p>Helping students stay focused, organized, and motivated to achieve their academic goals.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="features.html" class="text-white">Features</a></li>
+                        <li><a href="about.html" class="text-white">About Us</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Features</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="timer.html" class="text-white">Study Timer</a></li>
+                        <li><a href="tasks.html" class="text-white">Task Manager</a></li>
+                        <li><a href="dashboard.html" class="text-white">Dashboard</a></li>
+                        <li><a href="blog.html" class="text-white">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5>Newsletter</h5>
+                    <p>Subscribe to our newsletter for study tips and updates.</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2" placeholder="Your email">
+                        <button type="submit" class="btn btn-outline-light">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 Mind's Motive. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>   
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

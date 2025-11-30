@@ -1,0 +1,341 @@
+/* Main Styles for Mind's Motive */
+
+:root {
+    --primary-color: #3a6b7e;     /* Calming teal blue */
+    --secondary-color: #8db38b;   /* Soft sage green */
+    --accent-color: #f2d0a4;      /* Warm sand */
+    --dark-color: #1d3557;        /* Deep navy */
+    --light-color: #f7f9fb;       /* Off-white */
+    --danger-color: #d88c9a;      /* Muted rose */
+    --success-color: #8db38b;     /* Soft sage green */
+    --body-bg: #f7f9fb;           /* Light background */
+    --text-color: #2c3e50;        /* Readable dark blue-gray */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text-color);
+}
+
+/* Utility Classes */
+.bg-gradient {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.bg-secondary {
+    background-color: var(--secondary-color) !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-secondary {
+    color: var(--secondary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 0.8rem 1rem;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    color: white !important;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+    height: 40px;
+}
+
+.navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--accent-color) !important;
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background: linear-gradient(135deg, #f8f9fc 0%, #e8eaed 100%);
+}
+
+/* Cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Timer Styles */
+.timer-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.timer-display {
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.timer-controls .btn {
+    width: 120px;
+    margin: 0 5px;
+}
+
+/* Task Manager Styles */
+.task-item {
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.2s ease;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.task-item:hover {
+    background-color: rgba(78, 115, 223, 0.05);
+}
+
+.task-item.completed {
+    border-left-color: var(--success-color);
+    opacity: 0.7;
+}
+
+.task-item.high-priority {
+    border-left-color: var(--danger-color);
+}
+
+.task-item.medium-priority {
+    border-left-color: var(--accent-color);
+}
+
+.task-actions {
+    opacity: 0.3;
+    transition: opacity 0.2s ease;
+    margin-left: 0.5rem;
+}
+
+.task-item:hover .task-actions {
+    opacity: 1;
+}
+
+/* Dashboard Styles */
+.stat-card {
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0.5rem;
+}
+
+.stat-card.primary {
+    border-left-color: var(--primary-color);
+}
+
+.stat-card.success {
+    border-left-color: var(--success-color);
+}
+
+.stat-card.warning {
+    border-left-color: var(--accent-color);
+}
+
+.stat-card.danger {
+    border-left-color: var(--danger-color);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    opacity: 0.3;
+}
+
+/* Login/Signup Forms */
+.auth-form-container {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.auth-form {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 0;
+}
+
+footer a {
+    color: var(--light-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+ 
+
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+.social-icons a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .timer-display {
+        font-size: 3.5rem;
+    }
+}
+
+/* Animation for motivational quotes */
+.quote-animation {
+    animation: fadeInOut 10s infinite;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #224abe;
+}
+/* Blog Enhancements */
+.blog-img img {
+    max-height: 180px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.blog-post .card-body {
+    padding: 1.25rem;
+}
+
+.blog-hero {
+    min-height: 280px;
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('assests/student-studying.jpg');
+    background-size: cover;
+    background-position: center;
+    animation: heroPan 14s ease-in-out infinite alternate;
+}
+
+@keyframes heroPan {
+    0% { background-position: center; }
+    100% { background-position: center right; }
+}
+
+/* Attractive accents */
+.feature-icon {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.badge {
+    border-radius: 0.4rem;
+}
+
+.main-content .card-header {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+/* Global spacing for main content */
+.main-content {
+    margin-bottom: 3rem;
+}
