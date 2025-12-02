@@ -9,12 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
 function addBlogImages() {
     const blogPosts = document.querySelectorAll('.blog-post');
     const blogImages = [
-        "https://source.unsplash.com/1200x800/?student",
-        "https://source.unsplash.com/1200x800/?study",
-        "https://source.unsplash.com/1200x800/?books",
-        "https://source.unsplash.com/1200x800/?library",
-        "https://source.unsplash.com/1200x800/?notes",
-        "https://source.unsplash.com/1200x800/?learning"
+        "assests/student-studying.jpg",
+        "assests/productivity.jpg",
+        "assests/study-task.jpeg",
+        "assests/student task.jpg",
+        "assests/unnamed.jpg"
     ];
     blogPosts.forEach((post) => {
         if (!post.querySelector('.blog-img')) {
@@ -25,6 +24,7 @@ function addBlogImages() {
             img.src = src;
             img.className = 'img-fluid rounded';
             img.alt = 'Student Blog Image';
+            img.loading = 'lazy';
             imgContainer.appendChild(img);
             post.insertBefore(imgContainer, post.firstChild);
         }

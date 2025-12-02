@@ -1,4 +1,4 @@
-// Main JavaScript functionality for StudyFocus
+// Main JavaScript functionality for Minds Motive
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize motivational quotes

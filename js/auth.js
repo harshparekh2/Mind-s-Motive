@@ -1,4 +1,4 @@
-// Authentication functionality for StudyFocus
+// Authentication functionality for Minds Motive
 
 // Check if user is logged in on page load
 document.addEventListener('DOMContentLoaded', function() {

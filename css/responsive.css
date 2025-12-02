@@ -27,9 +27,18 @@
     .timer-display {
         font-size: 3rem;
     }
+    .timer-controls {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
     .timer-controls .btn {
-        padding: 0.5rem 0.75rem;
-        margin: 0 0.25rem;
+        width: 100%;
+        padding: 0.6rem 0.75rem;
+        margin: 0.25rem 0;
+    }
+    .timer-container {
+        padding: 0 0.5rem;
     }
     
     /* Task form */
@@ -37,6 +46,10 @@
         width: 100%;
         margin-top: 0.5rem;
     }
+    .task-item {
+        padding: 0.75rem !important;
+    }
+}
     
     /* Task filters */
     .task-filters {

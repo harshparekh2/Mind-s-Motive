@@ -187,13 +187,16 @@ class TaskManager {
         
         // Show empty message if no tasks
         if (filteredTasks.length === 0) {
-            taskList.appendChild(emptyTaskMessage);
+            if (emptyTaskMessage) {
+                emptyTaskMessage.classList.remove('d-none');
+                taskList.appendChild(emptyTaskMessage);
+            }
             return;
         }
         
         // Hide empty message
-        if (emptyTaskMessage.parentNode === taskList) {
-            taskList.removeChild(emptyTaskMessage);
+        if (emptyTaskMessage) {
+            emptyTaskMessage.classList.add('d-none');
         }
         
         // Create task elements
