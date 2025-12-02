@@ -27,8 +27,22 @@
         }
         
         .timer-controls .btn {
-            width: 120px;
-            margin: 0 5px;
+            margin: 0;
+        }
+
+        .timer-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        @media (min-width: 576px) {
+            .timer-controls .btn {
+                flex: 1 1 160px;
+                max-width: 220px;
+            }
         }
         
         .quote-container {

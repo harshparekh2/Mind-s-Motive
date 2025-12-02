@@ -3,20 +3,16 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize motivational quotes
     initMotivationalQuotes();
-    
-    // Initialize any page-specific functionality
-    const currentPage = window.location.pathname.split('/').pop();
-    
-    switch(currentPage) {
-        case 'timer.html':
-            initStudyTimer();
-            break;
-        case 'tasks.html':
-            initTaskManager();
-            break;
-        case 'dashboard.html':
-            initDashboard();
-            break;
+
+    // Robust page detection that works with pretty URLs (e.g., Netlify)
+    if (document.getElementById('timerDisplay')) {
+        initStudyTimer();
+    }
+    if (document.getElementById('taskForm')) {
+        initTaskManager();
+    }
+    if (document.getElementById('studyTimeChart') || document.getElementById('productivityChart')) {
+        initDashboard();
     }
 });
 
